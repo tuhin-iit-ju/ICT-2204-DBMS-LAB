@@ -1,0 +1,163 @@
+mysql> show database
+    -> show databases
+    -> create database tuhin
+    -> show databases
+    -> show databases;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'database
+show databases
+create database tuhin
+show databases
+show databases' at line 1
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+4 rows in set (0.00 sec)
+
+mysql> create database tuhin;
+Query OK, 1 row affected (0.01 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| tuhin              |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use tuhin;
+Database changed
+mysql> create table chimon;
+ERROR 4028 (HY000): A table must have at least one visible column.
+mysql> create table()
+    -> 
+    -> 
+    -> create table(
+    -> create table emon(
+    -> name varchar(500,
+    -> name 
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '()
+
+
+create table(
+create table emon(
+name varchar(500,
+name' at line 1
+mysql> create table t(
+    -> roll int primary key,
+    -> name varchar(50)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> insert into t value(1957,"Tuhin");
+Query OK, 1 row affected (0.01 sec)
+
+mysql> select * from t;
++------+-------+
+| roll | name  |
++------+-------+
+| 1957 | Tuhin |
++------+-------+
+1 row in set (0.00 sec)
+
+mysql> create database iit14batch;
+Query OK, 1 row affected (0.00 sec)
+
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| iit14batch         |
+| information_schema |
+| mysql              |
+| performance_schema |
+| sys                |
+| tuhin              |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> use database iit14batch;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> use iit14batch;
+Database changed
+mysql> use database iit14batch;
+ERROR 1049 (42000): Unknown database 'database'
+mysql> create table student(
+    -> student_id int,
+    -> student_name varchar(30),
+    -> session varchar(10),
+    -> cgpa float(5,2),
+    -> gender varchar(7),
+    -> mobile_phone varchar(15),
+    -> email varchar(100),
+    -> dob date);
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+mysql> show table student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student' at line 1
+mysql> show student;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'student' at line 1
+mysql> show table;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> use iit15batch;
+ERROR 1049 (42000): Unknown database 'iit15batch'
+mysql> use iit14batch;
+Database changed
+mysql> select * from student;
+Empty set (0.00 sec)
+
+mysql> desc student;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| student_id   | int          | YES  |     | NULL    |       |
+| student_name | varchar(30)  | YES  |     | NULL    |       |
+| session      | varchar(10)  | YES  |     | NULL    |       |
+| cgpa         | float(5,2)   | YES  |     | NULL    |       |
+| gender       | varchar(7)   | YES  |     | NULL    |       |
+| mobile_phone | varchar(15)  | YES  |     | NULL    |       |
+| email        | varchar(100) | YES  |     | NULL    |       |
+| dob          | date         | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+8 rows in set (0.00 sec)
+
+mysql> create table task_id(
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+mysql> create table task(
+    -> task_id int not null,
+    -> task_name varchar(50));
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> desc task;
++-----------+-------------+------+-----+---------+-------+
+| Field     | Type        | Null | Key | Default | Extra |
++-----------+-------------+------+-----+---------+-------+
+| task_id   | int         | NO   |     | NULL    |       |
+| task_name | varchar(50) | YES  |     | NULL    |       |
++-----------+-------------+------+-----+---------+-------+
+2 rows in set (0.00 sec)
+
+mysql> insert into task(1223,"hkjghku");
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '1223,"hkjghku")' at line 1
+mysql> insert into task value(1,'asd');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> select * from task;
++---------+-----------+
+| task_id | task_name |
++---------+-----------+
+|       1 | asd       |
++---------+-----------+
+1 row in set (0.00 sec)
+
